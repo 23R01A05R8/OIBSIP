@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio — Vikas Ankam</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.06);
+      --accent1:#7c3aed;
+      --accent2:#06b6d4;
+      --accent3:#f97316;
+      --muted: #9aa4b2;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+      background: linear-gradient(180deg,#071127 0%, #0f1724 100%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 24px;
+      line-height:1.4;
+    }
+    .container{max-width:1100px;margin:0 auto}
+
+    /* header */
+    .hero{
+      display:grid;
+      grid-template-columns: 180px 1fr;
+      gap:28px;
+      align-items:center;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06));
+      padding:22px;
+      border-radius:var(--radius);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    }
+    .avatar{
+      width:180px;height:180px;border-radius:14px;overflow:hidden;
+      border:4px solid rgba(255,255,255,0.06);
+      background:linear-gradient(180deg,#0b1220,#0b1220);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .intro h1{margin:0;font-size:28px;letter-spacing:-0.4px}
+    .intro p.lead{color:var(--muted);margin:8px 0 14px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap}
+    .badge{padding:8px 12px;border-radius:999px;font-weight:700;font-size:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+
+    /* info row */
+    .info{display:flex;gap:16px;flex-wrap:wrap}
+    .info a{color:var(--muted);text-decoration:none;font-size:14px}
+    .cta{margin-top:10px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent2)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white}
+
+    /* main grid */
+    .main-grid{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .section-title h3{margin:0;font-size:16px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .project{padding:12px;border-radius:10px;background:var(--glass);min-height:120px;display:flex;flex-direction:column;justify-content:space-between}
+    .project h4{margin:0 0 8px}
+    .project p{margin:0;color:var(--muted);font-size:13px}
+
+    /* sidebar */
+    .skills{display:flex;flex-direction:column;gap:10px}
+    .skill{font-size:13px}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;margin-top:6px}
+    .bar > i{display:block;height:100%;border-radius:999px}
+
+    .contact-list{display:flex;flex-direction:column;gap:8px}
+    .contact-item{display:flex;gap:10px;align-items:center}
+    .contact-item svg{opacity:0.85}
+
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:120px 1fr}
+      .avatar{width:120px;height:120px}
+      .main-grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+    }
+    @media (max-width:420px){
+      body{padding:18px}
+      .hero{padding:14px}
+      .avatar{width:100px;height:100px}
+      .intro h1{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="hero">
+      <div class="avatar">
+      </div>
+      <div class="intro">
+        <h1>Vikas Ankam — Frontend Developer</h1>
+        <p class="lead">I build attractive, responsive websites and web apps using HTML, CSS and JavaScript. Curious, fast learner and love turning ideas into delightful UI.</p>
+        <div class="badges">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">Responsive</span>
+        </div>
+        <div class="info">
+          <a href="mailto:you@example.com">vikasankam2@gmail.com</a>
+          <a href="#" target="_blank">https://github.com/23R01A05R8</a>
+          <a href="#" target="_blank">https://www.linkedin.com/in/vikas-ankam-511189293/</a>
+        </div>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="window.open('#resume','_blank')">Download Resume</button>
+          <button class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section>
+        <div class="card">
+          <div class="section-title">
+            <h3>Projects</h3>
+            <small class="muted">Selected work</small>
+          </div>
+          <div class="projects">
+            <article class="project">
+              <div>
+                <h4>Portfolio Website</h4>
+                <p>Clean, responsive portfolio with light/dark theme toggle and contact form.</p>
+              </div>
+              <div style="display:flex;gap:8px;justify-content:flex-end">
+                <a class="btn btn-outline" href="#">Live</a>
+                <a class="btn btn-primary" href="#">Source</a>
+              </div>
+            </article>
+            <article class="project">
+              <div>
+                <h4>Landing Page</h4>
+                <p>Marketing landing page with responsive grids, animations and CTA optimization.</p>
+              </div>
+              <div style="display:flex;gap:8px;justify-content:flex-end">
+                <a class="btn btn-outline" href="#">Live</a>
+                <a class="btn btn-primary" href="#">Source</a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div>
+                <h4>Tic Tac Toe</h4>
+                <p>Interactive game built with vanilla JS and a focus on UX and accessibility.</p>
+              </div>
+              <div style="display:flex;gap:8px;justify-content:flex-end">
+                <a class="btn btn-outline" href="#">Live</a>
+                <a class="btn btn-primary" href="#">Source</a>
+              </div>
+            </article>
+
+            <article class="project">
+              <div>
+                <h4>Landing Page Mock</h4>
+                <p>Colorful mockups and responsive hero sections made with CSS grid and flexbox.</p>
+              </div>
+              <div style="display:flex;gap:8px;justify-content:flex-end">
+                <a class="btn btn-outline" href="#">Live</a>
+                <a class="btn btn-primary" href="#">Source</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title"><h3>About Me</h3></div>
+          <p style="color:var(--muted);margin:0">I'm a beginner-to-intermediate frontend developer with an eye for design. I enjoy building clean, responsive pages and learning new CSS techniques like grid, flexbox and custom properties. I love taking projects from idea to production-ready code.</p>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><h3>Skills</h3></div>
+          <div class="skills">
+            <div class="skill">HTML <div class="bar"><i style="width:95%;background:linear-gradient(90deg,var(--accent1),var(--accent2))"></i></div></div>
+            <div class="skill">CSS <div class="bar"><i style="width:90%;background:linear-gradient(90deg,var(--accent2),var(--accent3))"></i></div></div>
+            <div class="skill">JavaScript <div class="bar"><i style="width:75%;background:linear-gradient(90deg,var(--accent1),var(--accent3))"></i></div></div>
+            <div class="skill">Responsive Design <div class="bar"><i style="width:88%;background:linear-gradient(90deg,var(--accent3),var(--accent2))"></i></div></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px" id="contact">
+          <div class="section-title"><h3>Contact</h3></div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/><path d="M7 3H17V8H7V3Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg>
+              <div>
+                <div style="font-weight:700">vikasankam2@gmail.com</div>
+                <div style="color:var(--muted);font-size:13px">Email me for work or collabs</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10C21 16 12 21 12 21C12 21 3 16 3 10C3 7.34784 3.94821 4.80312 5.63604 3.0202C7.32386 1.23729 9.61547 0 12 0C14.3845 0 16.6761 1.23729 18.3639 3.0202C20.0518 4.80312 21 7.34784 21 10Z" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg>
+              <div>
+                <div style="font-weight:700">Hyderabad,Telangana</div>
+                <div style="color:var(--muted);font-size:13px">Open to remote work</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.07C21.8 12.4 20.7 14 18.8 14.1C16.9 14.2 15.6 13.2 14.6 12.5C13.6 11.8 12.2 11.1 10.6 11.1C9 11.1 7.6 11.8 6.6 12.5C5.6 13.2 4.3 14.2 2.4 14.1C0.5 14 0 12.07 0 12.07C0 12.07 1.1 9.1 3 7.6C4.9 6.1 7.3 5.3 9.2 5.1C11.1 4.9 12.6 5.8 13.6 6.5C14.6 7.2 15.9 8.1 17.5 8.1C19.1 8.1 20.5 7.4 21.5 6.7C22.5 6 23.8 4.9 23.8 4.9C23.8 4.9 23.2 11.74 22 12.07Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg>
+              <div>
+                <div style="font-weight:700">https://github.com/23R01A05R8</div>
+                <div style="color:var(--muted);font-size:13px">View source & projects</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      Built by <a href="#" style="color:var(--muted);text-decoration:underline">@vikas</a>
+    </footer>
+
+  </div>
+</body>
+</html>
